@@ -1,0 +1,88 @@
+/* 設定畫布及背景樣式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #4682B4); /* 漸層天空藍 */
+}
+
+/* 畫布全屏設置 */
+canvas#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 顯示祝福文字樣式 */
+.message {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: #FFD700; /* 金黃色 */
+    text-shadow: 3px 3px 5px #000; /* 黑色陰影 */
+    font-weight: bold;
+    animation: fadeInOut 3s infinite alternate; /* 淡入淡出動畫 */
+}
+
+/* 計分樣式 */
+.score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 陰影 */
+}
+
+/* 雪花動畫效果 */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* 音效按鈕樣式 (如果有加入) */
+.audio-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.audio-controls:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 顯示訊息動畫 */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
